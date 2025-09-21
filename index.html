@@ -49,34 +49,6 @@
     .agreement-rules ul {
       padding-left: 20px;
     }
-    .options {
-      margin-bottom: 20px;
-      font-size: 1.1em;
-    }
-    label {
-      margin-left: 8px;
-      cursor: pointer;
-    }
-    .submit-btn {
-      background: #1C355F;
-      color: #fff;
-      border: none;
-      padding: 12px 30px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1em;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-    }
-    .submit-btn:hover {
-      background: #16304b;
-    }
-    .error {
-      color: #e52541;
-      font-size: 1em;
-      margin-top: 10px;
-      text-align: center;
-    }
     .signature-bar {
       margin-top: 28px;
       font-size: 0.95em;
@@ -91,7 +63,7 @@
     <h1>Light Studio Agreement</h1>
     <div class="agreement-text">
       This agreement is for all dubbing, voiceover, or similar work done with <strong>Light Studio</strong>.<br>
-      Please read the rules below and choose whether you agree.
+      Please read the rules below and indicate your agreement.
     </div>
     <div class="agreement-rules">
       <strong>Agreement Rules:</strong>
@@ -114,33 +86,11 @@
         <li>Light Studio reserves the right to update these rules at any time; you will be notified of any changes.</li>
       </ul>
     </div>
-    <form id="studioAgreementForm">
-      <div class="options">
-        <input type="radio" id="agree" name="agreement" value="agree" />
-        <label for="agree">I Agree</label><br />
-        <input type="radio" id="notagree" name="agreement" value="notagree" />
-        <label for="notagree">I Do Not Agree</label>
-      </div>
-      <button type="submit" class="submit-btn">Submit</button>
-      <div class="error" id="errorMsg"></div>
-    </form>
+    <!-- Embedded Google Form -->
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdZBSEAcQ2YnIh_MLJqXP4NbF8IjJksHfVs4iQrgKcebfHigw/viewform?embedded=true" width="640" height="792" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
     <div class="signature-bar">
       By submitting, you confirm you have read and understood the Light Studio rules.
     </div>
   </div>
-  <script>
-    document.getElementById('studioAgreementForm').onsubmit = function(e) {
-      e.preventDefault();
-      const selected = document.querySelector('input[name="agreement"]:checked');
-      const errorMsg = document.getElementById('errorMsg');
-      if (!selected) {
-        errorMsg.textContent = 'Please select one option before submitting.';
-        return;
-      }
-      errorMsg.textContent = '';
-      alert('Response recorded: ' + selected.value);
-      // Add backend integration here if needed
-    };
-  </script>
 </body>
 </html>
